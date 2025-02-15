@@ -15,7 +15,7 @@
         <input id="textInput" type="text" 
             class="w-full p-2 rounded bg-gray-700 border border-gray-600 text-white" 
             placeholder="Type your prompt..." />
-        <button onclick="generateImage()" 
+        <button id="generateButton"
             class="mt-3 w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded">Generate</button>
     </div>
 
@@ -25,9 +25,9 @@
 
     <p id="errorMessage" class="text-red-500 mt-4 hidden"></p>
 
-    <!-- ✅ Correct Script Placement -->
-    <script>
-        async function generateImage() {
+    <!-- ✅ Correct Placement for JavaScript -->
+    <script defer>
+        document.getElementById("generateButton").addEventListener("click", async function generateImage() {
             let text = document.getElementById("textInput").value.trim();
             let imageElement = document.getElementById("imageResult");
             let errorMessage = document.getElementById("errorMessage");
@@ -57,7 +57,7 @@
                 errorMessage.textContent = "⚠️ Server error: " + error.message;
                 errorMessage.classList.remove("hidden");
             }
-        }
+        });
     </script>
 
 </body>
