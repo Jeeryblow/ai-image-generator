@@ -40,10 +40,10 @@
             errorMessage.classList.add("hidden");
             imageElement.classList.add("hidden");
 
-            let response = await fetch("https://spring-paper-ac21.evilorganization.workers.dev/?text=" + encodeURIComponent(text));
+            let response = await fetch("https://spring-paper-ac21.evilorganization.workers.dev" + encodeURIComponent(text));
 
             if (response.ok) {
-                imageElement.src = "https://spring-paper-ac21.evilorganization.dev/?text=" + encodeURIComponent(text);
+                imageElement.src = "https://spring-paper-ac21.evilorganization.dev" + encodeURIComponent(text);
                 imageElement.classList.remove("hidden");
             } else {
                 let errorData = await response.json();
